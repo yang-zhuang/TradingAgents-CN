@@ -182,6 +182,46 @@ class DataFetchers:
             asyncio.set_event_loop(loop)
             return loop
 
+    @staticmethod
+    def get_tushare_adapter():
+        """获取Tushare提供器"""
+        try:
+            from tradingagents.dataflows.providers.china.tushare import get_tushare_provider
+            return get_tushare_provider()
+        except ImportError as e:
+            logger.error(f"❌ Tushare提供器导入失败: {e}")
+            return None
+
+    @staticmethod
+    def get_akshare_adapter():
+        """获取AKShare适配器"""
+        try:
+            from tradingagents.dataflows.providers.china.akshare import get_akshare_provider
+            return get_akshare_provider()
+        except ImportError as e:
+            logger.error(f"❌ AKShare适配器导入失败: {e}")
+            return None
+
+    @staticmethod
+    def get_baostock_adapter():
+        """获取BaoStock适配器"""
+        try:
+            from tradingagents.dataflows.providers.china.baostock import get_baostock_provider
+            return get_baostock_provider()
+        except ImportError as e:
+            logger.error(f"❌ BaoStock适配器导入失败: {e}")
+            return None
+
+    @staticmethod
+    def get_mongodb_adapter():
+        """获取MongoDB适配器"""
+        try:
+            from tradingagents.dataflows.cache.mongodb_cache_adapter import get_mongodb_cache_adapter
+            return get_mongodb_cache_adapter()
+        except Exception as e:
+            logger.warning(f"⚠️ 获取MongoDB适配器失败: {e}")
+            return None
+
 
 __all__ = [
     'DataFetchers',
