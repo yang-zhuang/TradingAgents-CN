@@ -25,7 +25,7 @@ def test_hk_data_source_priority():
         print("📊 测试港股信息获取优先级...")
         
         # 测试统一港股信息接口
-        from tradingagents.dataflows.interface import get_hk_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified
         
         test_symbols = [
             "0700.HK",  # 腾讯控股
@@ -71,7 +71,7 @@ def test_hk_data_priority():
     print("=" * 80)
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         
         test_symbol = "0700.HK"
         start_date = "2025-07-01"
@@ -185,7 +185,7 @@ def test_data_source_availability():
         
         # 检查统一接口
         try:
-            from tradingagents.dataflows.interface import get_hk_stock_info_unified, AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
+            from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified, AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
             print("✅ 统一港股接口可用")
             print(f"   AKShare可用标志: {AKSHARE_HK_AVAILABLE}")
             print(f"   Yahoo Finance可用标志: {HK_STOCK_AVAILABLE}")

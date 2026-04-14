@@ -276,7 +276,7 @@ class OptimizedChinaDataProvider:
 
         try:
             # 从统一接口获取股票基本信息
-            from .interface import get_china_stock_info_unified
+            from .interface_v1 import get_china_stock_info_unified
             stock_info = get_china_stock_info_unified(symbol)
 
             # 如果获取成功，直接返回基础信息
@@ -338,7 +338,7 @@ class OptimizedChinaDataProvider:
         # 首先尝试从统一接口获取股票基本信息
         try:
             logger.debug(f"🔍 [股票代码追踪] 尝试获取{symbol}的基本信息...")
-            from .interface import get_china_stock_info_unified
+            from .interface_v1 import get_china_stock_info_unified
             stock_info = get_china_stock_info_unified(symbol)
             logger.debug(f"🔍 [股票代码追踪] 获取到的股票信息: {stock_info}")
 

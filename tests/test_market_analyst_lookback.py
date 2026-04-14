@@ -101,7 +101,7 @@ def test_data_fetching(start_date, end_date):
     print("=" * 80)
     
     try:
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         
         # 使用一个常见的A股股票代码进行测试
         test_ticker = "300750"  # 平安银行

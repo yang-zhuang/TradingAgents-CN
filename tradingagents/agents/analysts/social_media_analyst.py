@@ -25,7 +25,7 @@ def _get_company_name_for_social_media(ticker: str, market_info: dict) -> str:
     try:
         if market_info['is_china']:
             # 中国A股：使用统一接口获取股票信息
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             stock_info = get_china_stock_info_unified(ticker)
 
             logger.debug(f"📊 [社交媒体分析师] 获取股票信息返回: {stock_info[:200] if stock_info else 'None'}...")

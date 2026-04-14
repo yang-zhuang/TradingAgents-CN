@@ -82,7 +82,7 @@ def demo_interface_functions():
     logger.info(f"=")
     
     try:
-        from tradingagents.dataflows.interface import (
+        from tradingagents.dataflows.interface_v1 import (
             get_china_stock_data_tushare,
             search_china_stocks_tushare,
             get_china_stock_info_tushare,

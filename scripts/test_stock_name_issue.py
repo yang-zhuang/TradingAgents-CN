@@ -34,7 +34,7 @@ def test_get_company_name():
         # 1. 测试 get_china_stock_info_unified
         print("\n1️⃣ 测试 get_china_stock_info_unified:")
         try:
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             stock_info = get_china_stock_info_unified(symbol)
             print(f"返回结果:\n{stock_info}")
             

@@ -21,7 +21,7 @@ def test_google_news_tool():
         print("🧪 测试Google新闻工具")
         print("=" * 50)
         
-        from tradingagents.dataflows.interface import get_google_news
+        from tradingagents.dataflows.interface_v1 import get_google_news
         
         print("✅ get_google_news函数导入成功")
         
@@ -57,7 +57,7 @@ def test_reddit_tools():
         print("\n🧪 测试Reddit工具")
         print("=" * 50)
         
-        from tradingagents.dataflows.interface import get_reddit_global_news, get_reddit_company_news
+        from tradingagents.dataflows.interface_v1 import get_reddit_global_news, get_reddit_company_news
         
         print("✅ Reddit工具函数导入成功")
         

@@ -130,7 +130,7 @@ def test_data_source_switching():
     print("\n🔍 测试数据源切换功能...")
     
     try:
-        from tradingagents.dataflows.interface import switch_china_data_source
+        from tradingagents.dataflows.interface_v1 import switch_china_data_source
         
         # 尝试切换到AKShare
         result = switch_china_data_source("akshare")
@@ -153,10 +153,10 @@ def test_unified_data_interface():
     print("\n🔍 测试统一数据接口...")
     
     try:
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         
         # 设置使用AKShare数据源
-        from tradingagents.dataflows.interface import switch_china_data_source
+        from tradingagents.dataflows.interface_v1 import switch_china_data_source
         switch_china_data_source("akshare")
         
         # 测试获取股票数据

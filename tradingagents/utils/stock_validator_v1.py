@@ -273,7 +273,7 @@ class StockDataPreparer:
             end_date = datetime.strptime(analysis_date, '%Y-%m-%d')
             start_date = end_date - timedelta(days=period_days)
 
-            from tradingagents.dataflows.interface import get_hk_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified
 
             stock_info = get_hk_stock_info_unified(formatted_code)
 
@@ -305,7 +305,7 @@ class StockDataPreparer:
                         suggestion="请检查港股代码是否正确，格式如：0700.HK，或稍后重试"
                     )
 
-            from tradingagents.dataflows.interface import get_hk_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
 
             historical_data = get_hk_stock_data_unified(
                 formatted_code, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d')

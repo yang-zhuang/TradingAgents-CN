@@ -33,7 +33,7 @@ def test_raw_data_display():
     
     try:
         # 直接调用底层数据接口
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         
         print("🔄 正在获取原始股票数据...")
         print("-" * 60)
@@ -111,7 +111,7 @@ def test_raw_data_display():
         print("=" * 80)
         
         try:
-            from tradingagents.dataflows.interface import get_china_stock_fundamentals_tushare
+            from tradingagents.dataflows.interface_v1 import get_china_stock_fundamentals_tushare
             
             print("🔄 正在获取财务基本面数据...")
             

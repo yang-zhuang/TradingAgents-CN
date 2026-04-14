@@ -135,7 +135,7 @@ class MongoDBReportManager:
             try:
                 if market_info.get("market") == "china_a":
                     # A股：使用统一接口获取股票信息
-                    from tradingagents.dataflows.interface import get_china_stock_info_unified
+                    from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
                     stock_info = get_china_stock_info_unified(stock_symbol)
                     if "股票名称:" in stock_info:
                         stock_name = stock_info.split("股票名称:")[1].split("\n")[0].strip()

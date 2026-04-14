@@ -130,7 +130,7 @@ def test_data_source_priority_summary():
     print("\n🧪 数据源优先级总结...")
     
     try:
-        from tradingagents.dataflows.interface import AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
+        from tradingagents.dataflows.interface_v1 import AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
         
         print("  📊 当前数据源可用性:")
         print(f"    AKShare港股: {AKSHARE_HK_AVAILABLE}")

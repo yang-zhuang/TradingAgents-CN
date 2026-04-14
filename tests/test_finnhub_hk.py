@@ -176,7 +176,7 @@ def test_unified_interface_finnhub_priority():
     print("\n🧪 测试统一接口的FINNHUB优先级...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         from datetime import datetime, timedelta
         
         end_date = datetime.now().strftime('%Y-%m-%d')

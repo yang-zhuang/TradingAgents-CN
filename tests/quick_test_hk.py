@@ -64,7 +64,7 @@ def test_unified_interface():
     print("\n🧪 测试统一接口...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified
         
         symbol = "0700.HK"
         print(f"  获取 {symbol} 信息...")

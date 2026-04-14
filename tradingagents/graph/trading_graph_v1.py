@@ -24,7 +24,7 @@ VLLM_TIMEOUT = 180
 VLLM_MAX_TOKENS = 4000
 VLLM_TEMPERATURE = 0.7
 VLLM_MAX_RETRIES = 3
-from tradingagents.dataflows.interface import set_config
+from tradingagents.dataflows.interface_v1 import set_config
 
 from .conditional_logic import ConditionalLogic
 from .setup import GraphSetup

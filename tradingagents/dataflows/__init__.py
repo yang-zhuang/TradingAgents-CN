@@ -51,7 +51,7 @@ except ImportError as e:
         StockstatsUtils = None
         STOCKSTATS_AVAILABLE = False
 
-from .interface import (
+from .interface_v1 import (
 
     # News and sentiment functions
     get_finnhub_news,

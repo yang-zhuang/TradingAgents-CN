@@ -28,7 +28,7 @@ def test_fundamentals_generation():
         print(f"\n🔧 步骤1: 获取股票数据...")
         
         # 获取股票数据
-        from tradingagents.dataflows.interface import get_china_stock_data_tushare
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_tushare
         stock_data = get_china_stock_data_tushare(test_ticker, "2025-07-01", "2025-07-15")
         
         print(f"✅ 股票数据获取完成，长度: {len(stock_data) if stock_data else 0}")

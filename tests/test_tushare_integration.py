@@ -134,7 +134,7 @@ def test_tushare_interface():
     print("=" * 60)
     
     try:
-        from tradingagents.dataflows.interface import (
+        from tradingagents.dataflows.interface_v1 import (
             get_china_stock_data_tushare,
             search_china_stocks_tushare,
             get_china_stock_fundamentals_tushare,

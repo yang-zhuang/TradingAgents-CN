@@ -50,7 +50,7 @@ def test_hk_data_unified():
     print("\n🧪 测试港股统一数据接口...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         from datetime import datetime, timedelta
         
         # 设置测试日期
@@ -95,7 +95,7 @@ def test_hk_info_unified():
     print("\n🧪 测试港股信息统一接口...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified
         
         symbol = "0700.HK"
         print(f"  获取 {symbol} 信息...")
@@ -129,7 +129,7 @@ def test_market_auto_selection():
     print("\n🧪 测试市场自动选择功能...")
     
     try:
-        from tradingagents.dataflows.interface import get_stock_data_by_market
+        from tradingagents.dataflows.interface_v1 import get_stock_data_by_market
         from datetime import datetime, timedelta
         
         end_date = datetime.now().strftime('%Y-%m-%d')

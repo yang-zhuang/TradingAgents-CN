@@ -903,7 +903,7 @@ def get_realtime_stock_news(ticker: str, curr_date: str, hours_back: int = 6) ->
 
     # 备用方案2: 尝试使用Google新闻
     try:
-        from tradingagents.dataflows.interface import get_google_news
+        from tradingagents.dataflows.interface_v1 import get_google_news
 
         # 根据股票类型构建搜索查询
         if stock_type == "A股":

@@ -86,7 +86,7 @@ def test_akshare_hk_availability():
     print("\n🧪 测试AKShare港股可用性...")
     
     try:
-        from tradingagents.dataflows.interface import AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
+        from tradingagents.dataflows.interface_v1 import AKSHARE_HK_AVAILABLE, HK_STOCK_AVAILABLE
         
         print(f"  AKShare港股可用: {AKSHARE_HK_AVAILABLE}")
         print(f"  Yahoo Finance港股可用: {HK_STOCK_AVAILABLE}")
@@ -107,7 +107,7 @@ def test_akshare_hk_availability():
             print("  ⚠️ Yahoo Finance港股数据源不可用")
         
         # 测试统一接口
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         print("  ✅ 港股统一接口导入成功")
         
         return True
@@ -123,7 +123,7 @@ def test_data_source_priority():
     print("\n🧪 测试数据源优先级...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         from datetime import datetime, timedelta
         
         # 设置测试日期

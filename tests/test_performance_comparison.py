@@ -39,7 +39,7 @@ def simulate_old_strategy():
         
         try:
             # 获取历史价格数据
-            from tradingagents.dataflows.interface import get_china_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
             stock_data = get_china_stock_data_unified(ticker, start_date, end_date)
             
             # 获取基本面数据
@@ -95,7 +95,7 @@ def test_new_strategy():
         recent_end_date = curr_date
         recent_start_date = (datetime.strptime(curr_date, '%Y-%m-%d') - timedelta(days=2)).strftime('%Y-%m-%d')
         
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         current_price_data = get_china_stock_data_unified(ticker, recent_start_date, recent_end_date)
         
         # 2. 获取基本面财务数据

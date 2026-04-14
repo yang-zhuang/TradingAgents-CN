@@ -25,13 +25,13 @@ def test_tushare_stock_info_failure():
         try:
             # 1. 测试Tushare直接获取
             print(f"🔍 步骤1: 测试Tushare直接获取...")
-            from tradingagents.dataflows.interface import get_china_stock_info_tushare
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_tushare
             tushare_result = get_china_stock_info_tushare(code)
             print(f"✅ Tushare结果: {tushare_result}")
             
             # 2. 测试统一接口
             print(f"🔍 步骤2: 测试统一接口...")
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             unified_result = get_china_stock_info_unified(code)
             print(f"✅ 统一接口结果: {unified_result}")
             

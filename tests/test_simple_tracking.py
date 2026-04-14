@@ -77,7 +77,7 @@ def test_tushare_direct():
         print(f"\n🔧 测试Tushare接口...")
         
         # 测试Tushare接口
-        from tradingagents.dataflows.interface import get_china_stock_data_tushare
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_tushare
         
         result = get_china_stock_data_tushare(test_ticker, "2025-07-01", "2025-07-15")
         

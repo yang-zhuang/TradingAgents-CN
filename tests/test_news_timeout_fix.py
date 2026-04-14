@@ -53,7 +53,7 @@ class TestNewsTimeoutFix(unittest.TestCase):
             mock_aggregator.side_effect = Exception("模拟实时新闻聚合器失败")
             
             # 模拟Google新闻获取失败
-            with patch('tradingagents.dataflows.interface.get_google_news') as mock_google_news:
+            with patch('tradingagents.dataflows.interface_v1.get_google_news') as mock_google_news:
                 mock_google_news.side_effect = Exception("模拟Google新闻获取失败")
                 
                 # 模拟东方财富新闻获取成功
@@ -86,7 +86,7 @@ class TestNewsTimeoutFix(unittest.TestCase):
         with patch('tradingagents.dataflows.realtime_news_utils.RealtimeNewsAggregator.get_realtime_stock_news') as mock_aggregator:
             mock_aggregator.side_effect = Exception("模拟实时新闻聚合器失败")
             
-            with patch('tradingagents.dataflows.interface.get_google_news') as mock_google_news:
+            with patch('tradingagents.dataflows.interface_v1.get_google_news') as mock_google_news:
                 mock_google_news.side_effect = Exception("模拟Google新闻获取失败")
                 
                 with patch('tradingagents.dataflows.akshare_utils.get_stock_news_em') as mock_em_news:

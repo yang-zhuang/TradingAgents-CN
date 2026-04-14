@@ -24,7 +24,7 @@ def test_002027_specifically():
         
         # 测试1: 数据获取
         print("\n📊 测试1: 数据获取")
-        from tradingagents.dataflows.interface import get_china_stock_data_tushare
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_tushare
         data = get_china_stock_data_tushare(test_ticker, "2025-07-01", "2025-07-15")
         
         if "002021" in data:

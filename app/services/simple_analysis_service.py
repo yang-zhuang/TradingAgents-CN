@@ -2540,7 +2540,7 @@ class SimpleAnalysisService:
             try:
                 if market_info.get("market") == "china_a":
                     # A股：使用统一接口获取股票信息
-                    from tradingagents.dataflows.interface import get_china_stock_info_unified
+                    from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
                     stock_info = get_china_stock_info_unified(stock_symbol)
                     logger.debug(f"📊 获取股票信息返回: {stock_info[:200] if stock_info else 'None'}...")
 

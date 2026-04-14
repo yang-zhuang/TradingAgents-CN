@@ -14,7 +14,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from tradingagents.dataflows.data_source_manager import DataSourceManager, ChinaDataSource
-from tradingagents.dataflows.interface import get_china_stock_fundamentals_tushare
+from tradingagents.dataflows.interface_v1 import get_china_stock_fundamentals_tushare
 from tradingagents.utils.logging_init import get_logger
 
 logger = get_logger("default")

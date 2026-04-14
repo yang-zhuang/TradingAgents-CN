@@ -39,7 +39,7 @@ def test_no_infinite_retry_stock_data():
         start_time = time.time()
         
         try:
-            from tradingagents.dataflows.interface import get_china_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
             result = get_china_stock_data_unified(code, "2025-07-01", "2025-07-17")
             
             end_time = time.time()
@@ -79,7 +79,7 @@ def test_no_infinite_retry_stock_info():
         start_time = time.time()
         
         try:
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             result = get_china_stock_info_unified(code)
             
             end_time = time.time()
@@ -154,14 +154,14 @@ def test_real_stock_performance():
         
         try:
             # 测试历史数据
-            from tradingagents.dataflows.interface import get_china_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
             data_result = get_china_stock_data_unified(code, "2025-07-15", "2025-07-17")
             
             data_time = time.time()
             data_elapsed = data_time - start_time
             
             # 测试基本信息
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             info_result = get_china_stock_info_unified(code)
             
             end_time = time.time()

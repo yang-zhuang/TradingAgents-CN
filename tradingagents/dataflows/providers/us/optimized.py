@@ -183,7 +183,7 @@ class OptimizedUSDataProvider:
                     # 港股优先使用AKShare数据源
                     logger.info(f"🇭🇰 [数据来源: API调用-AKShare] 尝试使用AKShare获取港股数据: {symbol}")
                     try:
-                        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+                        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
                         hk_data_text = get_hk_stock_data_unified(symbol, start_date, end_date)
 
                         if hk_data_text and "❌" not in hk_data_text:

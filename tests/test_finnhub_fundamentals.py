@@ -28,7 +28,7 @@ def test_finnhub_fundamentals_with_cache():
     print("\n📊 测试Finnhub基本面数据获取和缓存功能...")
     
     try:
-        from tradingagents.dataflows.interface import get_fundamentals_finnhub
+        from tradingagents.dataflows.interface_v1 import get_fundamentals_finnhub
         from tradingagents.dataflows.cache_manager import get_cache
         
         # 清理可能存在的缓存
@@ -77,7 +77,7 @@ def test_openai_fallback_with_cache():
     print("\n🔄 测试OpenAI fallback机制和缓存功能...")
     
     try:
-        from tradingagents.dataflows.interface import get_fundamentals_openai
+        from tradingagents.dataflows.interface_v1 import get_fundamentals_openai
         
         # 临时移除OpenAI配置来测试fallback
         original_backend_url = os.environ.get('BACKEND_URL')

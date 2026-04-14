@@ -147,7 +147,7 @@ def test_hk_data_source():
     print("\n🧪 测试港股数据源...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
         
         # 测试港股数据获取
         hk_ticker = "0700.HK"

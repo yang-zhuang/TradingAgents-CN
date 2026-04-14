@@ -250,7 +250,7 @@ class ImprovedHKStockProvider:
                     logger.debug(f"📊 [港股AKShare] AKShare获取失败: {e}")
 
                 # 备用：尝试从统一接口获取（包含Yahoo Finance）
-                from tradingagents.dataflows.interface import get_hk_stock_info_unified
+                from tradingagents.dataflows.interface_v1 import get_hk_stock_info_unified
                 hk_info = get_hk_stock_info_unified(symbol)
 
                 if hk_info and isinstance(hk_info, dict) and 'name' in hk_info:

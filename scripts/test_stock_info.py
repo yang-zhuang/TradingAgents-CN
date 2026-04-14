@@ -25,13 +25,13 @@ def test_stock_info_retrieval():
         try:
             # 1. 测试Tushare股票信息获取
             print(f"🔍 步骤1: 测试Tushare股票信息获取...")
-            from tradingagents.dataflows.interface import get_china_stock_info_tushare
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_tushare
             tushare_info = get_china_stock_info_tushare(code)
             print(f"✅ Tushare信息: {tushare_info}")
             
             # 2. 测试统一股票信息获取
             print(f"🔍 步骤2: 测试统一股票信息获取...")
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             unified_info = get_china_stock_info_unified(code)
             print(f"✅ 统一信息: {unified_info}")
             

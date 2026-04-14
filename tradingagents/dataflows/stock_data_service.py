@@ -269,7 +269,7 @@ class StockDataService:
         
         # 调用统一的中国股票数据接口
         try:
-            from .interface import get_china_stock_data_unified
+            from .interface_v1 import get_china_stock_data_unified
 
             return get_china_stock_data_unified(stock_code, start_date, end_date)
         except Exception as e:

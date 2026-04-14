@@ -24,7 +24,7 @@ def test_stock_info_fallback_mechanism():
         
         try:
             # 测试统一接口（现在应该有降级机制）
-            from tradingagents.dataflows.interface import get_china_stock_info_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
             result = get_china_stock_info_unified(code)
             print(f"✅ 统一接口结果: {result}")
             
@@ -109,7 +109,7 @@ def test_fundamentals_with_fallback():
     
     try:
         # 模拟基本面分析中的股票信息获取
-        from tradingagents.dataflows.interface import get_china_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
         stock_info = get_china_stock_info_unified(test_code)
         print(f"✅ 统一接口获取股票信息: {stock_info}")
         

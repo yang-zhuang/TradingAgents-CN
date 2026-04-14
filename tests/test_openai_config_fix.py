@@ -99,7 +99,7 @@ def test_fundamentals_api_selection():
         
         print(f"\n🔄 调用基本面数据获取...")
         
-        from tradingagents.dataflows.interface import get_fundamentals_openai
+        from tradingagents.dataflows.interface_v1 import get_fundamentals_openai
         
         # 这个调用应该会跳过OpenAI，直接使用FinnHub
         result = get_fundamentals_openai(test_ticker, test_date)

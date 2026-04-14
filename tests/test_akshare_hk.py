@@ -132,7 +132,7 @@ def test_unified_interface():
     print("\n🧪 测试统一接口的AKShare支持...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified, get_hk_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified, get_hk_stock_info_unified
         from datetime import datetime, timedelta
         
         end_date = datetime.now().strftime('%Y-%m-%d')

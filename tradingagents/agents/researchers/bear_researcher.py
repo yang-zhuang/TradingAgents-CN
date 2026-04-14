@@ -30,7 +30,7 @@ def create_bear_researcher(llm, memory):
             """根据股票代码获取公司名称"""
             try:
                 if market_info_dict['is_china']:
-                    from tradingagents.dataflows.interface import get_china_stock_info_unified
+                    from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
                     stock_info = get_china_stock_info_unified(ticker_code)
                     if stock_info and "股票名称:" in stock_info:
                         name = stock_info.split("股票名称:")[1].split("\n")[0].strip()

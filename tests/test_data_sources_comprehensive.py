@@ -34,7 +34,7 @@ def test_china_stock_data_sources():
         # 1. 测试统一数据源接口
         try:
             print(f"🔍 测试统一数据源接口...")
-            from tradingagents.dataflows.interface import get_china_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
             
             start_time = time.time()
             result = get_china_stock_data_unified(symbol, start_date, end_date)
@@ -168,7 +168,7 @@ def test_us_stock_data_sources():
         # 2. 测试原始yfinance接口
         try:
             print(f"🔍 测试原始yfinance接口...")
-            from tradingagents.dataflows.interface import get_YFin_data_online
+            from tradingagents.dataflows.interface_v1 import get_YFin_data_online
             
             start_time = time.time()
             result = get_YFin_data_online(symbol, start_date, end_date)
@@ -239,7 +239,7 @@ def test_news_data_sources():
         # 2. 测试FinnHub新闻
         try:
             print(f"🔍 测试FinnHub新闻...")
-            from tradingagents.dataflows.interface import get_finnhub_news
+            from tradingagents.dataflows.interface_v1 import get_finnhub_news
             
             start_time = time.time()
             result = get_finnhub_news(symbol, "2025-07-01", "2025-07-12")

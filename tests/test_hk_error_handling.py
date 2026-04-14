@@ -148,7 +148,7 @@ def test_hk_fallback_mechanisms():
     print("\n🔧 测试港股备用机制...")
     
     try:
-        from tradingagents.dataflows.interface import get_hk_stock_data_unified, get_hk_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified, get_hk_stock_info_unified
         
         symbol = "0700.HK"
         start_date = "2025-06-14"

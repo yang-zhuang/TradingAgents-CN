@@ -25,7 +25,7 @@ def test_fundamentals_stock_name():
         try:
             # 1. 获取股票数据
             print(f"🔍 步骤1: 获取股票数据...")
-            from tradingagents.dataflows.interface import get_china_stock_data_unified
+            from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
             stock_data = get_china_stock_data_unified(code, "2025-07-01", "2025-07-17")
             print(f"✅ 股票数据获取完成，长度: {len(stock_data) if stock_data else 0}")
             
@@ -74,7 +74,7 @@ def test_stock_info_direct():
     
     try:
         # 测试统一接口
-        from tradingagents.dataflows.interface import get_china_stock_info_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_info_unified
         stock_info = get_china_stock_info_unified(test_code)
         print(f"✅ 统一接口结果:")
         print(stock_info)
@@ -103,7 +103,7 @@ def test_fundamentals_with_fallback():
         print(f"📊 测试不存在的股票代码: {fake_code}")
         
         # 1. 获取股票数据（应该会降级）
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         stock_data = get_china_stock_data_unified(fake_code, "2025-07-01", "2025-07-17")
         print(f"✅ 股票数据: {stock_data[:100] if stock_data else 'None'}...")
         

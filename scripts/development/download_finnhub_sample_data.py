@@ -227,7 +227,7 @@ def main():
     # 测试数据获取
     logger.info(f"\n=== 测试数据获取 ===")
     try:
-        from tradingagents.dataflows.interface import get_finnhub_news
+        from tradingagents.dataflows.interface_v1 import get_finnhub_news
 
         
         result = get_finnhub_news(

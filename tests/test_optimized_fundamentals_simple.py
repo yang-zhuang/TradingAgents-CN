@@ -32,7 +32,7 @@ def test_optimized_fundamentals_logic():
         
         print(f"📅 获取价格数据时间范围: {recent_start_date} 到 {recent_end_date}")
         
-        from tradingagents.dataflows.interface import get_china_stock_data_unified
+        from tradingagents.dataflows.interface_v1 import get_china_stock_data_unified
         current_price_data = get_china_stock_data_unified(ticker, recent_start_date, recent_end_date)
         
         if current_price_data:

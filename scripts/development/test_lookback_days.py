@@ -10,7 +10,7 @@ import os
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.insert(0, project_root)
 
-from tradingagents.dataflows.interface import get_hk_stock_data_unified
+from tradingagents.dataflows.interface_v1 import get_hk_stock_data_unified
 
 def test_lookback_days():
     """测试港股数据是否使用配置的回溯天数"""
