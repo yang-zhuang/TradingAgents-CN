@@ -88,12 +88,12 @@ class ConfigManager:
         if env_file.exists():
             # 🔧 [修复] override=False 确保环境变量优先级高于 .env 文件
             # 这样 Docker 容器中的环境变量不会被 .env 文件中的占位符覆盖
-            logger.info(f"🔍 [ConfigManager] 加载 .env 文件: {env_file}")
-            logger.info(f"🔍 [ConfigManager] 加载前 DASHSCOPE_API_KEY: {'有值' if os.getenv('DASHSCOPE_API_KEY') else '空'}")
+            # logger.info(f"🔍 [ConfigManager] 加载 .env 文件: {env_file}")
+            # logger.info(f"🔍 [ConfigManager] 加载前 DASHSCOPE_API_KEY: {'有值' if os.getenv('DASHSCOPE_API_KEY') else '空'}")
 
             load_dotenv(env_file, override=False)
 
-            logger.info(f"🔍 [ConfigManager] 加载后 DASHSCOPE_API_KEY: {'有值' if os.getenv('DASHSCOPE_API_KEY') else '空'}")
+            # logger.info(f"🔍 [ConfigManager] 加载后 DASHSCOPE_API_KEY: {'有值' if os.getenv('DASHSCOPE_API_KEY') else '空'}")
 
     def _get_env_api_key(self, provider: str) -> str:
         """从环境变量获取API密钥"""
@@ -151,47 +151,49 @@ class ConfigManager:
     
     def _init_mongodb_storage(self):
         """初始化MongoDB存储"""
-        logger.info("🔧 [ConfigManager] 开始初始化 MongoDB 存储...")
+        # logger.info("🔧 [ConfigManager] 开始初始化 MongoDB 存储...")
 
         if not MONGODB_AVAILABLE:
-            logger.warning("⚠️ [ConfigManager] pymongo 未安装，无法使用 MongoDB 存储")
+            # logger.warning("⚠️ [ConfigManager] pymongo 未安装，无法使用 MongoDB 存储")
             return
 
         # 检查是否启用MongoDB存储
         use_mongodb_env = os.getenv("USE_MONGODB_STORAGE", "false")
         use_mongodb = use_mongodb_env.lower() == "true"
 
-        logger.info(f"🔍 [ConfigManager] USE_MONGODB_STORAGE={use_mongodb_env} (解析为: {use_mongodb})")
+        # logger.info(f"🔍 [ConfigManager] USE_MONGODB_STORAGE={use_mongodb_env} (解析为: {use_mongodb})")
 
         if not use_mongodb:
-            logger.info("ℹ️ [ConfigManager] MongoDB 存储未启用，将使用 JSON 文件存储")
+            # logger.info("ℹ️ [ConfigManager] MongoDB 存储未启用，将使用 JSON 文件存储")
             return
 
         try:
             connection_string = os.getenv("MONGODB_CONNECTION_STRING")
             database_name = os.getenv("MONGODB_DATABASE_NAME", "tradingagents")
 
-            logger.info(f"🔍 [ConfigManager] MONGODB_CONNECTION_STRING={'已设置' if connection_string else '未设置'}")
-            logger.info(f"🔍 [ConfigManager] MONGODB_DATABASE_NAME={database_name}")
+            # logger.info(f"🔍 [ConfigManager] MONGODB_CONNECTION_STRING={'已设置' if connection_string else '未设置'}")
+            # logger.info(f"🔍 [ConfigManager] MONGODB_DATABASE_NAME={database_name}")
 
             if not connection_string:
-                logger.error("❌ [ConfigManager] MONGODB_CONNECTION_STRING 未设置，无法初始化 MongoDB 存储")
+                # logger.error("❌ [ConfigManager] MONGODB_CONNECTION_STRING 未设置，无法初始化 MongoDB 存储")
                 return
 
-            logger.info(f"🔄 [ConfigManager] 正在创建 MongoDBStorage 实例...")
+            # logger.info(f"🔄 [ConfigManager] 正在创建 MongoDBStorage 实例...")
             self.mongodb_storage = MongoDBStorage(
                 connection_string=connection_string,
                 database_name=database_name
             )
 
             if self.mongodb_storage.is_connected():
-                logger.info(f"✅ [ConfigManager] MongoDB存储已启用: {database_name}.token_usage")
+                # logger.info(f"✅ [ConfigManager] MongoDB存储已启用: {database_name}.token_usage")
+                pass
             else:
                 self.mongodb_storage = None
-                logger.warning("⚠️ [ConfigManager] MongoDB连接失败，将使用JSON文件存储")
+                # logger.warning("⚠️ [ConfigManager] MongoDB连接失败，将使用JSON文件存储")
+                pass
 
         except Exception as e:
-            logger.error(f"❌ [ConfigManager] MongoDB初始化失败: {e}", exc_info=True)
+            # logger.error(f"❌ [ConfigManager] MongoDB初始化失败: {e}", exc_info=True)
             self.mongodb_storage = None
 
     def _init_default_configs(self):
